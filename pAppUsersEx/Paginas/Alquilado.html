@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PCs ALQUILADOS</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="Estilos/css/all.min.css" rel="stylesheet" />
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../img/echez-group.png" />
+</head>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12" id="dvMenu">
+                </div>
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">PCs ALQUILADOS</h3>
+                        </div>
+                        <form id="frmEventos">
+                            <div class="card-body">
+                                <div class="card card-gray-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">DATOS DEL PC</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtUserAlquilado">USER NAME</label>
+                                                    <input type="text" class="form-control" id="txtUserAlquilado" placeholder="User name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtSerialAlquilado">SERIAL PC</label>
+                                                    <input type="text" class="form-control" id="txtSerialAlquilado" placeholder="Serial PC">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtPcNameAlquilado">PC NAME</label>
+                                                    <input type="text" class="form-control" id="txtPcNameAlquilado" placeholder="PC Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtInstallationDateAlquilado">INSTALLATION DATE</label>
+                                                    <input type="date" class="form-control" id="txtInstallationDateAlquilado" placeholder="Installation date">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtPlatePCAlquilado">PLATE PC</label>
+                                                    <input type="number" class="form-control" id="txtPlatePCAlquilado" placeholder="Plate PC">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtSpecificationsAlquilado">SPECIFICATIONS</label>
+                                                    <input type="text" class="form-control" id="txtSpecificationsAlquilado" placeholder="Espicifications">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtRamAlquilado">RAM</label>
+                                                    <input type="text" class="form-control" id="txtRamAlquilado" placeholder="Ram">
+                                                </div>
+                                            </div>
+                                            <!-- hacer un combo box con las opciones desktop y laptop -->
+                                            <div class="col-md-3">
+                                                <!--
+
+    <div class="form-group">
+        <label for="txtDesktopLaptopAlquilado">DESKTOP/LAPTOP</label>
+        <input type="text" class="form-control" id="txtDesktopLaptopAlquilado" placeholder="Desktop o laptop">
+    </div>-->
+                                                <div class="form-group">
+                                                    <label for="cboDesktopLaptopAlquilado">DESKTOP/LAPTOP</label>
+                                                    <select id="cboDesktopLaptopAlquilado" class="form-control">
+                                                        <option value="Desktop">Desktop</option>
+                                                        <option value="Laptop">Laptop</option>                                                       
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtDomainAlquilado">DOMAIN</label>
+                                                    <input type="text" class="form-control" id="txtDomainAlquilado" placeholder="PC domain">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-danger">
+                                    <div class="card-header">
+                                        <h3 class="card-title">PROCESO</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">INSERTAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">ACTUALIZAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table id="tblAlquilado" class="table table-bordered table-striped" style="width:100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>USER NAME</th>
+                                                    <th>PC SERIAL</th>
+                                                    <th>PC NAME</th>
+                                                    <th>INSTALLATION DATE</th>
+                                                    <th>PLATE PC</th>
+                                                    <th>SPECIFICATIONS<th>
+                                                    <th>RAM</th>
+                                                    <th>DESKTOP/LAPTOP</th>
+                                                    <th>DOMAIN</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <div id="dvMensaje" class=""></div>  <!--Cre que este es para que aparezca la tabla-->
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/Alquilado.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+    <script src="Scripts/Comunes/Tablas.js"></script>
+
+    <!--Tables-->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(function () {
+            $("#dvMenu").load("../Paginas/Menu.html")
+
+        })
+    </script>
+</body>
+</html>
