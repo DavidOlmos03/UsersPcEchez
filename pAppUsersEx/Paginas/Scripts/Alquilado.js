@@ -58,6 +58,7 @@ async function Consultar() {
         $("#txtRamAlquilado").val(Rpta.Ram);
         $("#cboDesktopLaptopAlquilado").val(Rpta.Desktop_Laptop);
         $("#txtDomainAlquilado").val(Rpta.Domain);
+        $("#txtStatusPCAlquilado").val(Rpta.Status_PC);
 
 
         /*let FechaInicio = Rpta.FechaInicio;
@@ -87,6 +88,8 @@ async function EjecutarComandos(Comando) {
     let RamAlquilado = $("#txtRamAlquilado").val();
     let DesktopLaptopAlquilado = $("#cboDesktopLaptopAlquilado").val();
     let DomainAlquilado = $("#txtDomainAlquilado").val();
+    let StatusPCAlquilado =  $("#txtStatusPCAlquilado").val();
+
 
 //HERE
 
@@ -100,7 +103,9 @@ async function EjecutarComandos(Comando) {
         Specifications_: SpecificationsAlquilado,
         Ram: RamAlquilado,
         Desktop_Laptop: DesktopLaptopAlquilado,
-        Domain: DomainAlquilado
+        Domain: DomainAlquilado,
+        Status_PC: StatusPCAlquilado
+
     }
 
     //Invocamos el servicio a través del fetch, usando el método fetch de javascript

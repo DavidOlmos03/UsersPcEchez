@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities1">
+  <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities2">
     <EntitySetMapping Name="Alquiladoes">
       <EntityTypeMapping TypeName="usuariosExModel.Alquilado">
         <MappingFragment StoreEntitySet="Alquilado">
@@ -14,22 +14,7 @@
           <ScalarProperty Name="Desktop_Laptop" ColumnName="Desktop/Laptop" />
           <ScalarProperty Name="Domain" ColumnName="Domain" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Devolucions">
-      <EntityTypeMapping TypeName="usuariosExModel.Devolucion">
-        <MappingFragment StoreEntitySet="Devolucion">
-          <ScalarProperty Name="User" ColumnName="User" />
-          <ScalarProperty Name="Serial_" ColumnName="Serial " />
-          <ScalarProperty Name="PC_Name" ColumnName="PC Name" />
-          <ScalarProperty Name="Installation_Date" ColumnName="Installation Date" />
-          <ScalarProperty Name="Plate_PC" ColumnName="Plate PC" />
-          <ScalarProperty Name="Specifications_" ColumnName="Specifications " />
-          <ScalarProperty Name="Ram" ColumnName="Ram" />
-          <ScalarProperty Name="Desktop_Laptop" ColumnName="Desktop/Laptop" />
-          <ScalarProperty Name="Domain" ColumnName="Domain" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status_PC" ColumnName="Status PC" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -19,21 +19,7 @@
           <Property Name="Desktop/Laptop" Type="nvarchar" MaxLength="255" />
           <Property Name="Domain" Type="nvarchar" MaxLength="255" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Devolucion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="User" Type="nvarchar" MaxLength="255" />
-          <Property Name="Serial " Type="nvarchar" MaxLength="255" />
-          <Property Name="PC Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Installation Date" Type="date" />
-          <Property Name="Plate PC" Type="float" />
-          <Property Name="Specifications " Type="nvarchar" MaxLength="255" />
-          <Property Name="Ram" Type="nvarchar" MaxLength="255" />
-          <Property Name="Desktop/Laptop" Type="nvarchar" MaxLength="255" />
-          <Property Name="Domain" Type="nvarchar" MaxLength="255" />
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status PC" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Propio">
           <Key>
@@ -61,7 +47,6 @@
         </EntityType>
         <EntityContainer Name="usuariosExModelStoreContainer">
           <EntitySet Name="Alquilado" EntityType="Self.Alquilado" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Devolucion" EntityType="Self.Devolucion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propio" EntityType="Self.Propio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -84,21 +69,7 @@
           <Property Name="Desktop_Laptop" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="Devolucion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="User" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Serial_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="PC_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Installation_Date" Type="DateTime" Precision="0" />
-          <Property Name="Plate_PC" Type="Double" />
-          <Property Name="Specifications_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Ram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Desktop_Laptop" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status_PC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Propio">
           <Key>
@@ -124,9 +95,8 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityContainer Name="usuariosExEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="usuariosExEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alquiladoes" EntityType="Self.Alquilado" />
-          <EntitySet Name="Devolucions" EntityType="Self.Devolucion" />
           <EntitySet Name="Propios" EntityType="Self.Propio" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
         </EntityContainer>
@@ -135,7 +105,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities1">
+        <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities2">
           <EntitySetMapping Name="Alquiladoes">
             <EntityTypeMapping TypeName="usuariosExModel.Alquilado">
               <MappingFragment StoreEntitySet="Alquilado">
@@ -149,22 +119,7 @@
                 <ScalarProperty Name="Desktop_Laptop" ColumnName="Desktop/Laptop" />
                 <ScalarProperty Name="Domain" ColumnName="Domain" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Devolucions">
-            <EntityTypeMapping TypeName="usuariosExModel.Devolucion">
-              <MappingFragment StoreEntitySet="Devolucion">
-                <ScalarProperty Name="User" ColumnName="User" />
-                <ScalarProperty Name="Serial_" ColumnName="Serial " />
-                <ScalarProperty Name="PC_Name" ColumnName="PC Name" />
-                <ScalarProperty Name="Installation_Date" ColumnName="Installation Date" />
-                <ScalarProperty Name="Plate_PC" ColumnName="Plate PC" />
-                <ScalarProperty Name="Specifications_" ColumnName="Specifications " />
-                <ScalarProperty Name="Ram" ColumnName="Ram" />
-                <ScalarProperty Name="Desktop_Laptop" ColumnName="Desktop/Laptop" />
-                <ScalarProperty Name="Domain" ColumnName="Domain" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Status_PC" ColumnName="Status PC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

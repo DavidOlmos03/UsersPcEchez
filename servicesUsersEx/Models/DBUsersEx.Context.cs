@@ -13,10 +13,10 @@ namespace servicesUsersEx.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class usuariosExEntities1 : DbContext
+    public partial class usuariosExEntities2 : DbContext
     {
-        public usuariosExEntities1()
-            : base("name=usuariosExEntities1")
+        public usuariosExEntities2()
+            : base("name=usuariosExEntities2")
         {
         }
     
@@ -26,7 +26,6 @@ namespace servicesUsersEx.Models
         }
     
         public virtual DbSet<Alquilado> Alquiladoes { get; set; }
-        public virtual DbSet<Devolucion> Devolucions { get; set; }
         public virtual DbSet<Propio> Propios { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }

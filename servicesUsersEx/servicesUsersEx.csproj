@@ -182,10 +182,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Clases\clsPropio.cs" />
-    <Compile Include="Clases\clsDevolucion.cs" />
     <Compile Include="Clases\clsAlquilado.cs" />
     <Compile Include="Controllers\PropioController.cs" />
-    <Compile Include="Controllers\DevolucionController.cs" />
     <Compile Include="Controllers\AlquiladoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -209,9 +207,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBUsersEx.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Devolucion.cs">
-      <DependentUpon>DBUsersEx.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Propio.cs">
       <DependentUpon>DBUsersEx.tt</DependentUpon>
@@ -257,13 +252,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DBUsersEx.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBUsersEx.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBUsersEx.edmx.diagram">
-      <DependentUpon>DBUsersEx.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -283,6 +271,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\DBUsersEx.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBUsersEx.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBUsersEx.edmx.diagram">
+      <DependentUpon>DBUsersEx.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

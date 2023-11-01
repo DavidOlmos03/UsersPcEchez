@@ -14,21 +14,7 @@
     <Property Name="Desktop_Laptop" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
-  <EntityType Name="Devolucion">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="User" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Serial_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="PC_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Installation_Date" Type="DateTime" Precision="0" />
-    <Property Name="Plate_PC" Type="Double" />
-    <Property Name="Specifications_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Ram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Desktop_Laptop" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status_PC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Propio">
     <Key>
@@ -54,9 +40,8 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityContainer Name="usuariosExEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="usuariosExEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Alquiladoes" EntityType="Self.Alquilado" />
-    <EntitySet Name="Devolucions" EntityType="Self.Devolucion" />
     <EntitySet Name="Propios" EntityType="Self.Propio" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
   </EntityContainer>

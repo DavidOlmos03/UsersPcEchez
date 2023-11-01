@@ -14,21 +14,7 @@
     <Property Name="Desktop/Laptop" Type="nvarchar" MaxLength="255" />
     <Property Name="Domain" Type="nvarchar" MaxLength="255" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Devolucion">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="User" Type="nvarchar" MaxLength="255" />
-    <Property Name="Serial " Type="nvarchar" MaxLength="255" />
-    <Property Name="PC Name" Type="nvarchar" MaxLength="255" />
-    <Property Name="Installation Date" Type="date" />
-    <Property Name="Plate PC" Type="float" />
-    <Property Name="Specifications " Type="nvarchar" MaxLength="255" />
-    <Property Name="Ram" Type="nvarchar" MaxLength="255" />
-    <Property Name="Desktop/Laptop" Type="nvarchar" MaxLength="255" />
-    <Property Name="Domain" Type="nvarchar" MaxLength="255" />
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status PC" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Propio">
     <Key>
@@ -56,7 +42,6 @@
   </EntityType>
   <EntityContainer Name="usuariosExModelStoreContainer">
     <EntitySet Name="Alquilado" EntityType="Self.Alquilado" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Devolucion" EntityType="Self.Devolucion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Propio" EntityType="Self.Propio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

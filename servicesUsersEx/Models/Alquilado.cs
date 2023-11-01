@@ -24,5 +24,6 @@ namespace servicesUsersEx.Models
         public string Desktop_Laptop { get; set; }
         public string Domain { get; set; }
         public int Id { get; set; }
+        public string Status_PC { get; set; }
     }
 }

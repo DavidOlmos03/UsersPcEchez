@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using servicesUsersEx.Models;
 
 namespace servicesUsersEx.Clases
@@ -9,7 +10,10 @@ namespace servicesUsersEx.Clases
     {
 
         public Alquilado alquilado { get; set; }
-        private usuariosExEntities1 DBUsersEx = new usuariosExEntities1();
+
+        //public Devolucion devolucion { get; set; }
+
+        private usuariosExEntities2 DBUsersEx = new usuariosExEntities2();
         public string Insertar()
         {
             try
@@ -48,6 +52,21 @@ namespace servicesUsersEx.Clases
             //SELECCIONA todo 
             return DBUsersEx.Alquiladoes.AsQueryable();
         }
+        /*
+        public List<Alquilado> consultarActivos() {
+            return DBUsersEx.Alquiladoes
+                .OrderBy(t => t.Id)
+                .Where(t => t.Status_PC == "active")
+                .ToList();
+        }
+        public List<Alquilado> consultarInactivos()
+        {
+            return DBUsersEx.Alquiladoes
+                .OrderBy(t => t.Id)
+                .Where(t => t.Status_PC != "active")
+                .ToList();
+        }*/
+
         public string Actualizar()
         {
             try
@@ -73,6 +92,7 @@ namespace servicesUsersEx.Clases
                 _alquilados.Ram = alquilado.Ram;
                 _alquilados.Desktop_Laptop = alquilado.Desktop_Laptop;
                 _alquilados.Domain = alquilado.Domain;
+                _alquilados.Status_PC = alquilado.Status_PC;
 
 
                 //_eventos.IDEmpleado = evento.IDEmpleado;
@@ -99,6 +119,12 @@ namespace servicesUsersEx.Clases
                 {
                     return " no se encuentra ninguna PC alquilado con serial " + _alquilado.Serial_;
                 }
+                /*
+                    Se hace el envio de la información a  eliminar en la tabla de alquilado a la tabla de devuelto
+                 */
+                
+                //DBUsersEx.Devolucions.Add(devolucion);
+                //Devolucion y = devolucion.Consultar(value.Serial_);
 
                 DBUsersEx.Alquiladoes.Remove(_alquilado);
                 DBUsersEx.SaveChanges();
@@ -131,6 +157,7 @@ namespace servicesUsersEx.Clases
                        Ram = A.Ram,
                        Desktop_Laptop = A.Desktop_Laptop,
                        Domain = A.Domain,
+                       Estatus_PC = A.Status_PC
                    };
         }
         /*

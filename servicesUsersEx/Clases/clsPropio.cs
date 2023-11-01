@@ -9,7 +9,7 @@ namespace servicesUsersEx.Clases
     {
 
         public Propio propio { get; set; }
-        private usuariosExEntities1 DBUsersEx = new usuariosExEntities1();
+        private usuariosExEntities2 DBUsersEx = new usuariosExEntities2();
         public string Insertar()
         {
             try

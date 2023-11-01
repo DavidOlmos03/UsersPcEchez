@@ -21,8 +21,8 @@ namespace servicesUsersEx.Controllers
         // GET api/<controller>
         public IQueryable Get()
         {
-            clsAlquilado evento = new clsAlquilado();
-            IQueryable y = evento.ListaAlquilado();
+            clsAlquilado alquilado = new clsAlquilado();
+            IQueryable y = alquilado.ListaAlquilado();
             return y;
         }
 
@@ -42,7 +42,18 @@ namespace servicesUsersEx.Controllers
             Alquilado y = alquilado.Consultar(Serial);
             return y;
         }
-
+        /*
+        public List<Alquilado> GetActivos()
+        {
+            clsAlquilado _alquilado = new clsAlquilado();
+            return _alquilado.consultarActivos();
+        }
+        
+        public List<Alquilado> obtenerInactivos()
+        {
+            clsAlquilado _alquilado = new clsAlquilado();
+            return _alquilado.consultarInactivos();
+        }*/
         // POST api/<controller>
         public string Post([FromBody] Alquilado value)
         {
@@ -65,6 +76,12 @@ namespace servicesUsersEx.Controllers
         {
             clsAlquilado alquilados = new clsAlquilado();
             alquilados.alquilado = value;
+
+           /* clsDevolucion devoluciones = new clsDevolucion();
+            Alquilado y = alquilados.Consultar(value.Serial_);
+            devoluciones.devolucion = y;
+            devoluciones.Insertar();*/
+            
 
             return alquilados.Eliminar();
         }
