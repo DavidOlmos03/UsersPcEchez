@@ -10,5 +10,21 @@
 SELECT [User],[Serial ],[PC Name],[Installation Date],[Plate PC],[Specifications ],[Ram],[Desktop/Laptop],[Domain] FROM Devolucion WHERE [Serial ] != 'NULL'*/
 /*ALTER TABLE Alquilado ADD  [Status PC] nvarchar(255);*/
 /*UPDATE Alquilado SET [Status PC] = 'disabled' WHERE Id BETWEEN 2046 AND 2113;*/
+/*
+CREATE TABLE Users (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  correo VARCHAR(255) NOT NULL,
+  contraseña VARCHAR(255) NOT NULL
+);
+
+INSERT INTO Users (correo, contraseña) VALUES
+  ('juan@example.com', '123456'),
+  ('maria@example.com', '789012'),
+  ('pepe@example.com', '345678'),
+  ('luis@example.com', '901234'),
+  ('ana@example.com', '567890');
+  */
+
+
 
 

@@ -58,7 +58,7 @@ async function Consultar() {
         $("#txtRamAlquilado").val(Rpta.Ram);
         $("#cboDesktopLaptopAlquilado").val(Rpta.Desktop_Laptop);
         $("#txtDomainAlquilado").val(Rpta.Domain);
-        $("#txtStatusPCAlquilado").val(Rpta.Status_PC);
+        $("#cboStatusPCAlquilado").val(Rpta.Status_PC);
 
 
         /*let FechaInicio = Rpta.FechaInicio;
@@ -88,7 +88,7 @@ async function EjecutarComandos(Comando) {
     let RamAlquilado = $("#txtRamAlquilado").val();
     let DesktopLaptopAlquilado = $("#cboDesktopLaptopAlquilado").val();
     let DomainAlquilado = $("#txtDomainAlquilado").val();
-    let StatusPCAlquilado =  $("#txtStatusPCAlquilado").val();
+    let StatusPCAlquilado =  $("#cboStatusPCAlquilado").val();
 
 
 //HERE

@@ -45,10 +45,19 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="usuariosExModelStoreContainer">
           <EntitySet Name="Alquilado" EntityType="Self.Alquilado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propio" EntityType="Self.Propio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -95,17 +104,26 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityContainer Name="usuariosExEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="usuariosExEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alquiladoes" EntityType="Self.Alquilado" />
           <EntitySet Name="Propios" EntityType="Self.Propio" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities2">
+        <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities">
           <EntitySetMapping Name="Alquiladoes">
             <EntityTypeMapping TypeName="usuariosExModel.Alquilado">
               <MappingFragment StoreEntitySet="Alquilado">
@@ -146,6 +164,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="usuariosExModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

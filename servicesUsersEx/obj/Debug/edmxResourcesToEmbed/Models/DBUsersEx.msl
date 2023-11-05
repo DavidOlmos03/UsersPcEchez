@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities2">
+  <EntityContainerMapping StorageEntityContainer="usuariosExModelStoreContainer" CdmEntityContainer="usuariosExEntities">
     <EntitySetMapping Name="Alquiladoes">
       <EntityTypeMapping TypeName="usuariosExModel.Alquilado">
         <MappingFragment StoreEntitySet="Alquilado">
@@ -41,6 +41,15 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="usuariosExModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

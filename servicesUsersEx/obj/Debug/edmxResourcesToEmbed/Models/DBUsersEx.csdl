@@ -40,9 +40,18 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityContainer Name="usuariosExEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="usuariosExEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Alquiladoes" EntityType="Self.Alquilado" />
     <EntitySet Name="Propios" EntityType="Self.Propio" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
   </EntityContainer>
 </Schema>

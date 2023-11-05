@@ -6,12 +6,18 @@
     <title>PCs ALQUILADOS</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh4w0LPnwcSZMpw28KE759y375IaqQzU2F8NVCau7ThlKV3AE" crossorigin="anonymous">   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Estilos/css/all.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
     <!--Estilos para las tablas-->
     <link href="Estilos/dataTables.min.css" rel="stylesheet" />
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../img/echez-group.png" />
+
+
+    <!--DESDE EL CODIGO DE PHP-->     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -95,8 +101,8 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="cboDesktopLaptopAlquilado">STATUS</label>
-                                                    <select id="cboDesktopLaptopAlquilado" class="form-control">
+                                                    <label for="cboStatusPCAlquilado">STATUS</label>
+                                                    <select id="cboStatusPCAlquilado" class="form-control">
                                                         <option value="Active">Active</option>
                                                         <option value="Disabled">Disabled</option>
                                                     </select>
@@ -127,12 +133,15 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <br />
-                                                <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <br />
                                                 <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
                                             </div>
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-1">
+                                                <br />
+                                                <!--<button type="button" id="btnEliminar" class="btn-block btn-lg btn-danger">ELIMINAR</button>-->                                                                            
+                                                 <a href="" id="btnEliminar" class="delete" data-toggle="modal" style="width:10px"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </div>
+
 
                                         </div>
                                     </div>

@@ -13,7 +13,7 @@ namespace servicesUsersEx.Clases
 
         //public Devolucion devolucion { get; set; }
 
-        private usuariosExEntities2 DBUsersEx = new usuariosExEntities2();
+        private usuariosExEntities DBUsersEx = new usuariosExEntities();
         public string Insertar()
         {
             try
@@ -30,6 +30,7 @@ namespace servicesUsersEx.Clases
             }
 
         }
+        
         public Alquilado Consultar(string serial)
         {//selecciona uno  solo
             return DBUsersEx.Alquiladoes.FirstOrDefault(r => r.Serial_ == serial);

@@ -40,9 +40,18 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="usuariosExModelStoreContainer">
     <EntitySet Name="Alquilado" EntityType="Self.Alquilado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Propio" EntityType="Self.Propio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

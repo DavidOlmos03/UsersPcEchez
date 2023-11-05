@@ -169,6 +169,7 @@
     <Content Include="Paginas\Pagina1.html" />
     <Content Include="Paginas\Pagina2.html" />
     <Content Include="Paginas\PaginaBase.html" />
+    <Content Include="Paginas\Scripts\Login.js" />
     <Content Include="Paginas\Scripts\Propio.js" />
     <Content Include="Paginas\Scripts\Devolucion.js" />
     <Content Include="Paginas\Scripts\Comunes\Combos.js" />
