@@ -19,6 +19,7 @@ namespace servicesUsersEx.Controllers
         {
             clsLogin user = new clsLogin();
             User y = user.Consultar(email);
+            return y;
         }
             /*public bool Login(User usuario)
             {//selecciona uno  solo
