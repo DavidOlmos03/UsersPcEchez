@@ -6,7 +6,7 @@
         //alert('Paso 1');
         EjecutarComandos("POST");
     });
-    $("#btnActualizar").on("click", function () {
+    /*$("#btnActualizar").on("click", function () {
         EjecutarComandos("PUT");
     });
     $("#btnEliminar").on("click", function () {
@@ -14,8 +14,9 @@
     });
     $("#btnConsultar").on("click", function () {
         Consultar();
-    });
+    });*/
 });
+/*
 async function Consultar() {
     //event.preventDefault();
     //Capturo los datos de entrada
@@ -47,43 +48,44 @@ async function Consultar() {
         //Se presenta la respuesta en el div mensaje
         $("#dvMensaje").html(error);
     }
-}
+}*/
 async function EjecutarComandos(Comando) {
     //event.preventDefault();
-    alert(Comando);
+    //alert(Comando);
     //Capturo los datos de entrada
-    let IDEmpleado = $("#txtIDEmpleado").val();
-    let Nombre = $("#txtNombre").val();
-    let Apellido = $("#txtApellido").val();
-    let Puesto = $("#txtPuesto").val();
-    let FechaContratacion = $("#txtFechaContratacion").val();
+    let Email = $("#txtEmail").val();
+    let Password = $("#txtPassword").val();
+    let Password2 = $("#txtPassword2").val();
 
-    //Defino el json
-    let DatosEmpleado = {
-        IDEmpleado: IDEmpleado,
-        Nombre: Nombre,
-        Apellido: Apellido,
-        Puesto: Puesto,
-        FechaContratacion: FechaContratacion,
-    }
+    if (Password == Password2) {
+        //Defino el json
+        let DatosUsers = {
+            correo: Email,
+            contraseña: Password
+        }
 
-    //Invocamos el servicio a través del fetch, usando el método fetch de javascript
-    try {
-        const Respuesta = await fetch("http://localhost:63989/api/Empleado",
-            {
-                method: Comando,
-                mode: "cors",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(DatosEmpleado)
-            });
-        const Rpta = await Respuesta.json();
-        //Se presenta la respuesta en el div mensaje
-        $("#dvMensaje").html(Rpta);
+        //Invocamos el servicio a través del fetch, usando el método fetch de javascript
+        try {
+            const Respuesta = await fetch("http://localhost:60006/api/Login",
+                {
+                    method: Comando,
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(DatosUsers)
+                });
+            alert("El usuario con email: \n" + Email + "\nSe agrego correctamente");
+            const Rpta = await Respuesta.json();
+            //Se presenta la respuesta en el div mensaje
+            $("#dvMensaje").html(Rpta);
+        }
+        catch (error) {
+            //Se presenta la respuesta en el div mensaje
+            $("#dvMensaje").html(error);
+        }
+    } else {
+        alert("Passwords don't match, please try again");
     }
-    catch (error) {
-        //Se presenta la respuesta en el div mensaje
-        $("#dvMensaje").html(error);
-    }
+   
 }

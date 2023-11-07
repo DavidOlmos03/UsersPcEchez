@@ -228,3 +228,5 @@ C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\ob
 C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\obj\Debug\servicesUsersEx.csproj.CopyComplete
 C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\obj\Debug\servicesUsersEx.dll
 C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\obj\Debug\servicesUsersEx.pdb
+C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\bin\BCrypt.Net-Next.dll
+C:\Users\juand\Documents\ESTUDIOS_1\UsersPcEchez\UsersPcEchez\servicesUsersEx\bin\BCrypt.Net-Next.xml

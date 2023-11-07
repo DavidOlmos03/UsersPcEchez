@@ -77,6 +77,7 @@ async function Consultar() {
 }
 async function EjecutarComandos(Comando) {
     //event.preventDefault();
+    
     alert(Comando);
     //Capturo los datos de entrada
     let UserAlquilado = $("#txtUserAlquilado").val();
@@ -88,8 +89,8 @@ async function EjecutarComandos(Comando) {
     let RamAlquilado = $("#txtRamAlquilado").val();
     let DesktopLaptopAlquilado = $("#cboDesktopLaptopAlquilado").val();
     let DomainAlquilado = $("#txtDomainAlquilado").val();
-    let StatusPCAlquilado =  $("#cboStatusPCAlquilado").val();
-
+    let StatusPCAlquilado = $("#cboStatusPCAlquilado").val();
+    
 
 //HERE
 
@@ -119,6 +120,14 @@ async function EjecutarComandos(Comando) {
                 },
                 body: JSON.stringify(DatosAlquilado)
             });
+
+        if (Comando == "POST") {
+            alert("Se creo el PC con serial\n" + SerialAlquilado + "\nEn la tabla Alquilado");
+        } else if (Comando == "PUT") {
+            alert("Se actualizaron los datos del PC con serial:\n" + SerialAlquilado + "\nEn la tabla Alquilado");
+        } else if (Comando == 'DELETE') {
+            alert("Esta seguro que desea eliminar el PC con serial:\n" + SerialAlquilado + "\nDe la tabla Alquilado?");
+        }
         const Rpta = await Respuesta.json();
         //Se presenta la respuesta en el div mensaje
         $("#dvMensaje").html(Rpta);
@@ -126,6 +135,6 @@ async function EjecutarComandos(Comando) {
     catch (error) {
         //Se presenta la respuesta en el div mensaje
         $("#dvMensaje").html(error);
-    }
+    }   
 }
 

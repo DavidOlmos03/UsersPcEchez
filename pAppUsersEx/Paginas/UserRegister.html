@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>USER REGISTER</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="Estilos/css/all.min.css" rel="stylesheet" />
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../img/echez-group.png"/>
+
+</head>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                
+                <div class="col-md-12" id="dvMenu">
+                </div>
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">USER REGISTER</h3>
+                        </div>
+                        <form id="frmEmpleados"><!--REVISAR PARA QUE ES ESTO O BUSCAR EN INTERNET SI ES QUE NO SE ESTA UTILIZANDO-->
+                            <div class="card-body">
+                                <div class="card card-gray-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">DATA USERS</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtEmail">EMAIL</label>
+                                                    <input type="text" class="form-control" id="txtEmail" placeholder="User Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtPassword">PASSWORD</label>
+                                                    <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtPassword2">PASSWORD</label>
+                                                    <input type="password" class="form-control" id="txtPassword2" placeholder="Password">
+                                                </div>
+                                            </div>
+
+                                            <!--
+
+                                                       <div class="form-group">
+           <label for="txtFechaContratacion">Fecha de Contratación</label>
+           <input type="text" class="form-control" id="txtFechaContratacion" placeholder="Fecha de contratación del empleado">
+        -->
+                                        </div>
+
+
+                                        <!--
+
+
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="txtFechaContratacion">FECHA CONTRATACION</label>
+                                                    <input type="date" class="form-control" id="txtFechaContratacion" placeholder="Fecha contratacion">
+                                                </div>
+                                            </div>
+
+        -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10" style="align-items:center">
+                                            <br />
+                                            <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">INSERTAR</button>
+                                        </div>
+
+                                        <!--
+
+
+    <div class="col-md-3">
+        <br />
+        <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">ACTUALIZAR</button>
+    </div>
+    <div class="col-md-3">
+        <br />
+        <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
+    </div>
+    <div class="col-md-3">
+        <br />
+        <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
+    </div>-->
+                                    </div>
+                                        <!--
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="tblEmpleados" class="table table-bordered table-striped" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>ID Empleado</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Puesto</th>
+                        <th>Fecha de Contratación</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+          -->
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div id="dvMensaje" class=""></div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!--Tables-->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <!--Archivos comunes-->
+    <script src="Scripts/Comunes/Tablas.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+    <!--Archivos de la página-->
+    
+    <script src="Scripts/UserRegister.js"></script>
+    
+    <script>
+        $(function () {
+            $("#dvMenu").load("../Paginas/Menu.html")
+
+        })
+    </script>
+</body>
+</html>
