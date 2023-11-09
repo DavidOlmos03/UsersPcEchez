@@ -6,13 +6,13 @@ jQuery(function () {
     $("#dvMenu").load("../Paginas/Menu.html")
     //Registrar los botones para responder al evento click
     $("#btnInsertar").on("click", function () {
-        EjecutarComandos("POST");
+        PostAlert();
     });
     $("#btnActualizar").on("click", function () {
-        EjecutarComandos("PUT");
+        PutAlert();
     });
     $("#btnEliminar").on("click", function () {
-        EjecutarComandos("DELETE");
+        DeleteAlert();       
     });
     $("#btnConsultar").on("click", function () {
         Consultar();
@@ -78,7 +78,7 @@ async function Consultar() {
 async function EjecutarComandos(Comando) {
     //event.preventDefault();
     
-    alert(Comando);
+    //alert(Comando);
     //Capturo los datos de entrada
     let UserAlquilado = $("#txtUserAlquilado").val();
     let SerialAlquilado = $("#txtSerialAlquilado").val();
@@ -120,14 +120,6 @@ async function EjecutarComandos(Comando) {
                 },
                 body: JSON.stringify(DatosAlquilado)
             });
-
-        if (Comando == "POST") {
-            alert("Se creo el PC con serial\n" + SerialAlquilado + "\nEn la tabla Alquilado");
-        } else if (Comando == "PUT") {
-            alert("Se actualizaron los datos del PC con serial:\n" + SerialAlquilado + "\nEn la tabla Alquilado");
-        } else if (Comando == 'DELETE') {
-            alert("Esta seguro que desea eliminar el PC con serial:\n" + SerialAlquilado + "\nDe la tabla Alquilado?");
-        }
         const Rpta = await Respuesta.json();
         //Se presenta la respuesta en el div mensaje
         $("#dvMensaje").html(Rpta);
@@ -138,3 +130,119 @@ async function EjecutarComandos(Comando) {
     }   
 }
 
+/*
+ *Diferents alerts windows
+ */
+async function PostAlert() {
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "¿Estás seguro?",
+        text: "Ingresaras un nuevo PC!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, guardar!",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            EjecutarComandos("POST");
+            swalWithBootstrapButtons.fire({
+                title: "Guardado!",
+                text: "El nuevo PC ha sido ingresado con exito.",
+                icon: "success"
+            });           
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "No se ha ingresado el PC",
+                icon: "error"
+            });
+        }
+    });
+}
+
+async function PutAlert() {
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "¿Estás seguro?",
+        text: "Actualizaras los datos de un PC!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Si, actualizar!",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            EjecutarComandos("PUT");
+            swalWithBootstrapButtons.fire({
+                title: "Actualizado!",
+                text: "Los datos de tu PC han sido actualizados.",
+                icon: "success"
+            });
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "No se han actualizado los datos de ningun PC",
+                icon: "error"
+            });
+        }
+    });
+}
+async function DeleteAlert() {
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "¿Estás seguro?",
+        text: "Eliminaras un PC de tu base de datos!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, eliminar!",
+        cancelButtonText: "No, cancelar!",       
+        reverseButtons: true
+        
+    }).then((result) => {
+        if (result.isConfirmed) {
+            EjecutarComandos("DELETE");
+            swalWithBootstrapButtons.fire({
+                title: "Eliminado!",
+                text: "El PC indicado ha sido eliminado",
+                icon: "success"
+            });
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "No se ha eliminado ningún PC",
+                icon: "error"
+            });
+        }
+    });
+}
