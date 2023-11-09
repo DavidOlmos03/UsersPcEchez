@@ -24,7 +24,8 @@ INSERT INTO Users (correo, contraseña) VALUES
   ('luis@example.com', '901234'),
   ('ana@example.com', '567890');
   */
-
+  /*UPDATE Alquilado SET [Status PC] = 'Active' WHERE [Status PC] ='active';*/
+  /*UPDATE Alquilado SET [Status PC] = 'Disabled' WHERE [Status PC] = 'disabled';*/
 
 
 

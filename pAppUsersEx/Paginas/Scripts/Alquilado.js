@@ -16,20 +16,13 @@ jQuery(function () {
     });
     $("#btnConsultar").on("click", function () {
         Consultar();
-    });
-    //LlenarComboIDEmpleado();
-
+    });    
     LlenarTablaAlquilado();
 });
 async function LlenarTablaAlquilado() {
     LlenarTablaXServicios("http://localhost:60006/api/Alquilado", "#tblAlquilado");
 }
-/*
-async function LlenarComboIDEmpleado() {
-    LlenarComboXServicios("http://localhost:63989/api/Empleado", "#cboIDEmpleado");
-}*/
 async function Consultar() {
-    //event.preventDefault();
     //Capturo los datos de entrada
     let SerialAlquilado = $("#txtSerialAlquilado").val();
 
@@ -59,26 +52,17 @@ async function Consultar() {
         $("#cboDesktopLaptopAlquilado").val(Rpta.Desktop_Laptop);
         $("#txtDomainAlquilado").val(Rpta.Domain);
         $("#cboStatusPCAlquilado").val(Rpta.Status_PC);
-
-
-        /*let FechaInicio = Rpta.FechaInicio;
-        let FechaFin = Rpta.FechaFin;
-        if (FechaInicio != null) {
-            $("#txtFechaInicio").val(FechaInicio.split("T")[0]);
-        }
-        if (FechaFin != null) {
-            $("#txtFechaFin").val(FechaFin.split("T")[0]);
-        }*/
+       
     }
     catch (error) {
         //Se presenta la respuesta en el div mensaje
         $("#dvMensaje").html(error);
+        /*
+            Este tipo de errores se deben presentar en una ventana emergente 
+        */
     }
 }
 async function EjecutarComandos(Comando) {
-    //event.preventDefault();
-    
-    //alert(Comando);
     //Capturo los datos de entrada
     let UserAlquilado = $("#txtUserAlquilado").val();
     let SerialAlquilado = $("#txtSerialAlquilado").val();
@@ -91,9 +75,6 @@ async function EjecutarComandos(Comando) {
     let DomainAlquilado = $("#txtDomainAlquilado").val();
     let StatusPCAlquilado = $("#cboStatusPCAlquilado").val();
     
-
-//HERE
-
     //Defino el json
     let DatosAlquilado = {
         User: UserAlquilado,
@@ -122,7 +103,7 @@ async function EjecutarComandos(Comando) {
             });
         const Rpta = await Respuesta.json();
         //Se presenta la respuesta en el div mensaje
-        $("#dvMensaje").html(Rpta);
+       //$("#dvMensaje").html(Rpta);
     }
     catch (error) {
         //Se presenta la respuesta en el div mensaje

@@ -65,7 +65,6 @@ async function PutAlert() {
                 icon: "success"
             });
         } else if (
-            /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
         ) {
             swalWithBootstrapButtons.fire({
@@ -103,7 +102,6 @@ async function DeleteAlert() {
                 icon: "success"
             });
         } else if (
-            /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
         ) {
             swalWithBootstrapButtons.fire({

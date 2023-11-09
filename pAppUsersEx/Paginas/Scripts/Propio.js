@@ -29,7 +29,6 @@ async function LlenarComboIDEmpleado() {
     LlenarComboXServicios("http://localhost:63989/api/Empleado", "#cboIDEmpleado");
 }*/
 async function Consultar() {
-    //event.preventDefault();
     //Capturo los datos de entrada
     let SerialPropio = $("#txtSerialPropio").val();
 
@@ -57,16 +56,7 @@ async function Consultar() {
         $("#txtRamPropio").val(Rpta.Ram);
         $("#cboDesktopLaptopPropio").val(Rpta.Desktop_Laptop);
         $("#txtDomainPropio").val(Rpta.Domain);
-
-
-        /*let FechaInicio = Rpta.FechaInicio;
-        let FechaFin = Rpta.FechaFin;
-        if (FechaInicio != null) {
-            $("#txtFechaInicio").val(FechaInicio.split("T")[0]);
-        }
-        if (FechaFin != null) {
-            $("#txtFechaFin").val(FechaFin.split("T")[0]);
-        }*/
+    
     }
     catch (error) {
         //Se presenta la respuesta en el div mensaje
@@ -74,7 +64,6 @@ async function Consultar() {
     }
 }
 async function EjecutarComandos(Comando) {
-    //event.preventDefault();
     //Capturo los datos de entrada
     let UserPropio = $("#txtUserPropio").val();
     let SerialPropio = $("#txtSerialPropio").val();
@@ -84,8 +73,6 @@ async function EjecutarComandos(Comando) {
     let RamPropio = $("#txtRamPropio").val();
     let DesktopLaptopPropio = $("#cboDesktopLaptopPropio").val();
     let DomainPropio = $("#txtDomainPropio").val();
-
-//HERE
 
     //Defino el json
     let DatosPropio = {
@@ -112,7 +99,7 @@ async function EjecutarComandos(Comando) {
             });
         const Rpta = await Respuesta.json();
         //Se presenta la respuesta en el div mensaje
-        $("#dvMensaje").html(Rpta);
+        //$("#dvMensaje").html(Rpta);
     }
     catch (error) {
         //Se presenta la respuesta en el div mensaje
