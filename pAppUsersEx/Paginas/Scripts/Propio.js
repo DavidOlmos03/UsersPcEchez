@@ -6,13 +6,13 @@ jQuery(function () {
     $("#dvMenu").load("../Paginas/Menu.html")
     //Registrar los botones para responder al evento click
     $("#btnInsertar").on("click", function () {
-        EjecutarComandos("POST");
+        PostAlert();
     });
     $("#btnActualizar").on("click", function () {
-        EjecutarComandos("PUT");
+        PutAlert();
     });
     $("#btnEliminar").on("click", function () {
-        EjecutarComandos("DELETE");
+        DeleteAlert();
     });
     $("#btnConsultar").on("click", function () {
         Consultar();
@@ -75,7 +75,6 @@ async function Consultar() {
 }
 async function EjecutarComandos(Comando) {
     //event.preventDefault();
-    alert(Comando);
     //Capturo los datos de entrada
     let UserPropio = $("#txtUserPropio").val();
     let SerialPropio = $("#txtSerialPropio").val();

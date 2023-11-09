@@ -1,17 +1,15 @@
-﻿.delete {
+﻿/*
+    Style for delete button
+*/
+
+.delete {
     background-color: white;
-    /*border-color:red;*/
     border: 1px solid red;
     border-radius: 5px;
-    /*height:50px;*/
 }
-
 
 .material-icons {
     color: red;
-    /*font-size: 35px;*/
-    /*margin-top: 5%;*/
-    /*margin-left: 20%;*/
     border: 0px;
     background-color: white;
 }

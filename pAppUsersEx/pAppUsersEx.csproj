@@ -127,6 +127,7 @@
     <Content Include="Paginas\Desktop\SQLQuery1.sql" />
     <Content Include="Paginas\Propio.html" />
     <Content Include="Paginas\Devolucion.html" />
+    <Content Include="Paginas\Scripts\Comunes\Alerts.js" />
     <Content Include="Paginas\UserRegister.html" />
     <Content Include="Paginas\Estilos\adminlte.css" />
     <Content Include="Paginas\Estilos\adminlte.min.css" />

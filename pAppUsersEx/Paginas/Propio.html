@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="Estilos/css/all.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <link href="Estilos/css/micss.css" rel="stylesheet" />
     <!--Estilos para las tablas-->
     <link href="Estilos/dataTables.min.css" rel="stylesheet" />
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../img/echez-group.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -58,7 +60,7 @@
                                                 </div>
                                             </div>
 
-                                            
+
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtSpecificationsPropio">SPECIFICATIONS</label>
@@ -75,15 +77,15 @@
                                             <div class="col-md-3">
                                                 <!--
 
-    <div class="form-group">
-        <label for="txtDesktopLaptopAlquilado">DESKTOP/LAPTOP</label>
-        <input type="text" class="form-control" id="txtDesktopLaptopAlquilado" placeholder="Desktop o laptop">
-    </div>-->
+                                                <div class="form-group">
+                                                    <label for="txtDesktopLaptopAlquilado">DESKTOP/LAPTOP</label>
+                                                    <input type="text" class="form-control" id="txtDesktopLaptopAlquilado" placeholder="Desktop o laptop">
+                                                </div>-->
                                                 <div class="form-group">
                                                     <label for="cboDesktopLaptopPropio">DESKTOP/LAPTOP</label>
                                                     <select id="cboDesktopLaptopPropio" class="form-control">
                                                         <option value="Desktop">Desktop</option>
-                                                        <option value="Laptop">Laptop</option>                                                       
+                                                        <option value="Laptop">Laptop</option>
                                                     </select>
                                                 </div>
 
@@ -113,11 +115,12 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <br />
-                                                <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
+                                                <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
                                             </div>
                                             <div class="col-md-3">
                                                 <br />
-                                                <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
+                                                <!--<div id="btnEliminar" class="delete"><i class="btn-outline-light material-icons" title="Delete">&#xE872;</i></div> -->
+                                                <button type="button" id="btnEliminar" class="btn-block btn-lg delete"><i class="btn-outline-light material-icons" title="Delete">ELIMINAR&#xE872;</i></button>
                                             </div>
 
                                         </div>
@@ -132,7 +135,8 @@
                                                     <th>PC SERIAL</th>
                                                     <th>PC NAME</th>
                                                     <th>INSTALLATION DATE</th>
-                                                    <th>SPECIFICATIONS<th>
+                                                    <th>SPECIFICATIONS
+                                                    <th>
                                                     <th>RAM</th>
                                                     <th>DESKTOP/LAPTOP</th>
                                                     <th>DOMAIN</th>
@@ -156,9 +160,11 @@
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="Scripts/Propio.js"></script>
+    <!--Comunes-->
     <script src="Scripts/Comunes/Combos.js"></script>
     <script src="Scripts/Comunes/Tablas.js"></script>
-
+    <script src="Scripts/Comunes/Alerts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Tables-->
     <script src="../Scripts/jquery.dataTables.min.js"></script>
     <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
