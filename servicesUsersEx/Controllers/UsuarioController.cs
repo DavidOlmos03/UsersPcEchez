@@ -1,6 +1,5 @@
 ﻿using servicesUsersEx.Clases;
 using servicesUsersEx.Models;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
@@ -8,24 +7,22 @@ using System.Linq;
 using System.Security.Policy;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.Mvc;
-using System.Web.Security;
 
 namespace servicesUsersEx.Controllers
 {
     [EnableCors(origins: "http://localhost:60277", headers: "*", methods: "*")]
-    public class LoginController : ApiController
+    public class UsuarioController : ApiController
     {
         
 
         //public User User{ get; set; }
-       /* public IQueryable Get()
+        public IQueryable Get()
         {
-            clsLogin user = new clsLogin();
+            clsUsuario user = new clsUsuario();
             IQueryable y = user.ListaUsers();
             return y;
-        }*/
-        public User Get(string email, string password)
+        }
+      /*  public User Get(string email, string password)
         {
             clsLogin user = new clsLogin();
             User y = user.Consultar(email);
@@ -33,27 +30,19 @@ namespace servicesUsersEx.Controllers
             bool validPass = BCrypt.Net.BCrypt.Verify(password, y.contraseña);
             if (validPass)
             {
-                FormsAuthentication.SetAuthCookie(y.correo, false);
                 return y;
             }else { return null; }
             
-        }        
-        
-        public bool Get()
-        {
-            clsLogin logOut = new clsLogin();
-            bool y = logOut.CerrarSesion();
-            return y;
-        }
-        /*
-// POST api/<controller>
-public string Post([FromBody] User value)
-{
+        }*/
 
-   clsLogin users = new clsLogin();
-   users.user = value;
-   return users.Insertar();
-}*/
+        // POST api/<controller>
+        public string Post([FromBody] User value)
+        {
+
+            clsUsuario users = new clsUsuario();
+            users.user = value;
+            return users.Insertar();
+        }
         /*public bool Login(User usuario)
         {//selecciona uno  solo
             try

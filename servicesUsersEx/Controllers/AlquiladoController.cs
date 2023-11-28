@@ -9,6 +9,8 @@ using System.Web.Http.Cors;
 namespace servicesUsersEx.Controllers
 {
     [EnableCors(origins: "http://localhost:60277", headers: "*", methods: "*")]
+
+    [Authorize]
     public class AlquiladoController : ApiController
     {
         /*
@@ -26,6 +28,7 @@ namespace servicesUsersEx.Controllers
             return y;
         }
 
+        
         // GET api/<controller>
         /*
         public IQueryable<Evento> Get()

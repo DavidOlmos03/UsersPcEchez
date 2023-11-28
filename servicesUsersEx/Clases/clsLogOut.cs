@@ -10,32 +10,26 @@ using System.Web.Security;
 
 namespace servicesUsersEx.Clases
 {
-    public class clsLogin
+    public class clsLogOut
     {
         public User user { get; set; }
 
         //public Devolucion devolucion { get; set; }
 
-        private usuariosExEntities DBUsersEx = new usuariosExEntities();
-        public User Consultar(string email)
-        {//selecciona uno  solo
-            return DBUsersEx.Users.FirstOrDefault(r => r.correo == email);
-        }
-
+        private usuariosExEntities DBUsersEx = new usuariosExEntities();     
         /*
          * Se busca salid de la sesion con este metodo
          */
         public bool CerrarSesion()
         {
             bool banderaSalida = false;
-            try
-            {
+            try {
                 FormsAuthentication.SignOut();
                 banderaSalida = true;
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e.Message);
+                System.Console.WriteLine(e.Message);                         
             }
             return banderaSalida;
         }

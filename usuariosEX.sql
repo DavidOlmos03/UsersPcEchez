@@ -11,11 +11,7 @@ SELECT [User],[Serial ],[PC Name],[Installation Date],[Plate PC],[Specifications
 /*ALTER TABLE Alquilado ADD  [Status PC] nvarchar(255);*/
 /*UPDATE Alquilado SET [Status PC] = 'disabled' WHERE Id BETWEEN 2046 AND 2113;*/
 /*
-CREATE TABLE Users (
-  id INT IDENTITY(1,1) PRIMARY KEY,
-  correo VARCHAR(255) NOT NULL,
-  contraseña VARCHAR(255) NOT NULL
-);
+
 
 INSERT INTO Users (correo, contraseña) VALUES
   ('juan@example.com', '123456'),
@@ -26,6 +22,22 @@ INSERT INTO Users (correo, contraseña) VALUES
   */
   /*UPDATE Alquilado SET [Status PC] = 'Active' WHERE [Status PC] ='active';*/
   /*UPDATE Alquilado SET [Status PC] = 'Disabled' WHERE [Status PC] = 'disabled';*/
+/*
+CREATE TABLE Rol (
+id int primary key,
+Descripcion varchar(50)
+)
 
+INSERT INTO Rol(id,Descripcion) VALUES (1,'Admin'),(2,'AreaTI');
+*/
 
+DROP TABLE Users;
+
+CREATE TABLE Users (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  correo VARCHAR(255) NOT NULL,
+  contraseña VARCHAR(255) NOT NULL,
+  fkRol int not null,
+  FOREIGN KEY (fkRol) REFERENCES Rol(id)
+);
 

@@ -17,5 +17,8 @@ namespace servicesUsersEx.Models
         public int id { get; set; }
         public string correo { get; set; }
         public string contraseña { get; set; }
+        public int idRol { get; set; }
+    
+        public virtual Rol Rol { get; set; }
     }
 }

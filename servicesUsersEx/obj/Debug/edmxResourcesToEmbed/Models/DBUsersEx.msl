@@ -33,6 +33,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Rols">
+      <EntityTypeMapping TypeName="usuariosExModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="usuariosExModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -50,6 +58,7 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="correo" ColumnName="correo" />
           <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

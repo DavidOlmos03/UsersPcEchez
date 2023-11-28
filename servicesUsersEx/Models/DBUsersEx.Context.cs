@@ -27,6 +27,7 @@ namespace servicesUsersEx.Models
     
         public virtual DbSet<Alquilado> Alquiladoes { get; set; }
         public virtual DbSet<Propio> Propios { get; set; }
+        public virtual DbSet<Rol> Rols { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

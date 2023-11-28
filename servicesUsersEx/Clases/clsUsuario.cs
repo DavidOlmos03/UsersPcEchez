@@ -6,11 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace servicesUsersEx.Clases
 {
-    public class clsLogin
+    public class clsUsuario
     {
         public User user { get; set; }
 
@@ -22,24 +21,6 @@ namespace servicesUsersEx.Clases
             return DBUsersEx.Users.FirstOrDefault(r => r.correo == email);
         }
 
-        /*
-         * Se busca salid de la sesion con este metodo
-         */
-        public bool CerrarSesion()
-        {
-            bool banderaSalida = false;
-            try
-            {
-                FormsAuthentication.SignOut();
-                banderaSalida = true;
-            }
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e.Message);
-            }
-            return banderaSalida;
-        }
-        /*
         public string Insertar()
         {
             try
@@ -56,8 +37,8 @@ namespace servicesUsersEx.Clases
                 return e.Message;
             }
 
-        }*/
-        /*
+        }
+
         public IQueryable ListaUsers()
         {
             return from U in DBUsersEx.Set<User>()
@@ -71,7 +52,7 @@ namespace servicesUsersEx.Clases
                        contraseña = U.contraseña,
                        fkRol = R.id
                    };
-        }*/
+        }
 
     }
 }

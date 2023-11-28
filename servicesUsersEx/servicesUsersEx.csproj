@@ -184,10 +184,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Clases\clsLogOut.cs" />
+    <Compile Include="Clases\clsUsuario.cs" />
     <Compile Include="Clases\clsLogin.cs" />
+    <Compile Include="Clases\clsRol.cs" />
     <Compile Include="Clases\clsPropio.cs" />
     <Compile Include="Clases\clsAlquilado.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\PropioController.cs" />
     <Compile Include="Controllers\AlquiladoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,6 +218,9 @@
       <DependentUpon>DBUsersEx.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Propio.cs">
+      <DependentUpon>DBUsersEx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rol.cs">
       <DependentUpon>DBUsersEx.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">

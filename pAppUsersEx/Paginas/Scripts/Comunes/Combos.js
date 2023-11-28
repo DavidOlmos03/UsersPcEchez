@@ -13,7 +13,7 @@
         const Rpta = await Respuesta.json();
         //Se recorre en un ciclo para llenar el select con la información
         for (i = 0; i < Rpta.length; i++) {
-            $(ComboLlenar).append('<option value=' + Rpta[i].IDEmpleado + '>' + Rpta[i].Nombre + '</option>');
+            $(ComboLlenar).append('<option value=' + Rpta[i].id + '>' + Rpta[i].Descripcion + '</option>');
         }
     }
     catch (error) {

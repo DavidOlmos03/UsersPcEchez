@@ -5,18 +5,25 @@
     $("#btnInsertar").on("click", function () {     
         EjecutarComandos("POST");
     });
+    LlenarComboRol();
 });
+async function LlenarComboRol() {
+    LlenarComboXServicios("http://localhost:60006/api/Rol","#cboRol");
+}
 async function EjecutarComandos(Comando) {
     //Capturo los datos de entrada
     let Email = $("#txtEmail").val();
     let Password = $("#txtPassword").val();
     let Password2 = $("#txtPassword2").val();
+    let IdRol = $("#cboRol").val();
 
     if (Password == Password2) {
         //Defino el json
         let DatosUsers = {
             correo: Email,
-            contraseña: Password
+            contraseña: Password,
+            IdRol: IdRol
+
         }
 
         //Invocamos el servicio a través del fetch, usando el método fetch de javascript
